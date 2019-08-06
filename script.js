@@ -156,6 +156,7 @@ function addAlarm() {
     li.innerHTML = time+" "+"<span onclick=\"deleteAlarm(this)\""+
                    "class=\"close\">&times;</span>";
     document.getElementById("alarms").appendChild(li);
+	document.getElementById("alarmTime").value = "";
     updateAlarmList();
 }
 
