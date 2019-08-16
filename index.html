@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Clock</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="container">
-            <div class="center" id="clock">
-                <!-- Display clock -->
-                <div id="canvasDiv">
-                    <!-- Display alarm image if alarm is playing -->
-                    <img id="alarmImage" src="alarm.gif" style="display: none;">
-                    <!-- Display canvas if alarm is not playing -->
-                    <canvas id="canvas" width="500" height="500"></canvas>
-                </div>
-                <!-- Display time -->
-                <div id="timeDiv">
-                    <h3 id="time"></h3>
-                </div>
-            </div>
-            <div class="center" id="funtions">
-                <div id = "funDiv">
-                    <!-- Mute/unmute checkbox -->
-                    <div style="display:flex;">
-                        <h4>Sound</h4>
-                        <input type="checkbox" id="sound" onclick="sound()" checked>
-                        <h5 id="text">ON</h5>
-                    </div>
-                    <div>
-                        <!-- List of alarms -->
-                        <h4>Alarms</h4>
-                        <ul id="alarms"></ul>
-                        <br>
-                        <input type="time" id="alarmTime">
-                        <button onclick="addAlarm()">Add</button>
-                    </div>
-                </div>
-            </div>
+
+<head>
+  <title>Clock</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="playSound">
+    <p>Do you want to play sound?</p>
+    <button onclick="playSound(false)">No</button>
+    <button onclick="playSound(true)">Yes</button>
+  </div>
+  <div id="body">
+    <div class="header">
+      <h1>Analog Clock</h1>
+    </div>
+    <div class="row">
+      <div class="col-1">
+        <img id="alarmImage" src="Images/alarm.gif" style="display: none;">
+        <div id="canvasDiv">
+          <canvas id="canvas"></canvas>
         </div>
-        <script type="text/javascript" src="script.js"></script>
-    </body>
+        <div id="timeDiv">
+          <p id="time"></p>
+        </div>
+      </div>
+      <div class="col-2">
+        <div id="funDiv">
+          <div style="display:flex;">
+            <h4>Sound</h4>
+            <input type="checkbox" id="sound" onclick="sound()" checked>
+            <h5 id="text">ON</h5>
+          </div>
+          <div>
+            <h4>Alarms</h4>
+            <ul id="alarms"></ul>
+            <br>
+            <input type="time" id="alarmTime">
+            <button onclick="addAlarm()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
